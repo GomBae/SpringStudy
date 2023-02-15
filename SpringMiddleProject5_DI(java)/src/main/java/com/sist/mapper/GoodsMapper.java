@@ -9,6 +9,6 @@ import com.sist.vo.GoodsVO;
 
 
 public interface GoodsMapper {
-	@Select("SELECT no,goods_name FROM ${goods_tbl}")
+	@Select("SELECT no,goods_name FROM ${goods_tbl} ORDER BY no")
 	public List<GoodsVO> goodsListData(Map map);
 }
