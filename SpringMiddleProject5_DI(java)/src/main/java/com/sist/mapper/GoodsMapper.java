@@ -9,6 +9,10 @@ import com.sist.vo.GoodsVO;
 
 
 public interface GoodsMapper {
-	@Select("SELECT no,goods_name,goods_price,rownum FROM ${goods_tbl} WHERE rownum<=30 ORDER BY no")
+	@Select("SELECT no,goods_name,goods_price,rownum "
+			+ "FROM (SELECT no,goods_name,goods_price "
+			+ "FROM ${goods_tbl} "
+			+ "ORDER BY no) "
+			+ "WHERE rownum<=30")
 	public List<GoodsVO> goodsListData(Map map);
 }
