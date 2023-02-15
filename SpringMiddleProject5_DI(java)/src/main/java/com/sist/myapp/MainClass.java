@@ -36,7 +36,7 @@ public class MainClass {
 		map.put("goods_tbl", table[cno]);
 		List<GoodsVO> gList=mc.gs.goodsListData(map);
 		for(GoodsVO vo:gList) {
-			System.out.println(vo.getNo()+"."+vo.getGoods_name());
+			System.out.println(vo.getNo()+"."+vo.getGoods_name()+" "+vo.getGoods_price());
 		}
 	}
 
